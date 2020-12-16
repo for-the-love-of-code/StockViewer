@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="StockViewerUI.Views.WatchListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StockViewerUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="_watchListDetails">
+
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Center">
+            <TextBox Width="100" Text="{Binding Symbol, UpdateSourceTrigger=LostFocus}"/>
+            <Button Margin="5 0 0 0" Content="Add to watchlist" Command="{Binding SearchSymbolCommand}"/>
+        </WrapPanel>
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding WatchList}" AutoGenerateColumns="false" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                <DataGridTextColumn Binding="{Binding Price}" Header="Price" />
+                <DataGridTextColumn Binding="{Binding PreviousClose}" Header="Previous Close" />
+                <DataGridTextColumn Binding="{Binding YearLow}" Header="Year Low" />
+                <DataGridTextColumn Binding="{Binding YearHigh}" Header="YearHigh" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.RemoveStockCommand, ElementName=_watchListDetails}"
+                                        CommandParameter="{Binding}">Remove</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<Application x:Class="StockViewerUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StockViewerUI"
+             xmlns:viewModels="clr-namespace:StockViewerUI.ViewModels"
+             xmlns:views="clr-namespace:StockViewerUI.Views">
+
+
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Common.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModels:WatchListViewModel}">
+                <views:WatchListView />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

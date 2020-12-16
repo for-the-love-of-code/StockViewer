@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:StockViewer"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="380"
+        Margin="100, 100, 0 , 0"
+        Title="Login" Height="450" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
@@ -22,15 +23,15 @@
             <Border CornerRadius="10" Grid.RowSpan="2">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Color="#7be9f6" Offset="0.0"/>
-                        <GradientStop Color="#f083da" Offset="1"/>
+                        <GradientStop Color="LightSlateGray" Offset="0.0"/>
+                        <GradientStop Color="Black" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
 
 
             <StackPanel VerticalAlignment="Center">
-                <Image Source="Images/hand.png" Width="80"/>
+                <Image Source="Images\Stock-icon.png" Width="80"/>
                 <TextBlock Text="Stock Viewer"
                            FontWeight="Light"
                            FontFamily="helvetica"
@@ -95,7 +96,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Button Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0"/>
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Width="100" Height="40" Content="REGISTER" Click="Button_Click"/>
                 </StackPanel>
 
             </StackPanel>

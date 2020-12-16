@@ -31,5 +31,12 @@ namespace StockViewer
                 DragMove();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var register = new Register();
+            this.Visibility = Visibility.Hidden;
+            register.Show();
+        }
     }
 }

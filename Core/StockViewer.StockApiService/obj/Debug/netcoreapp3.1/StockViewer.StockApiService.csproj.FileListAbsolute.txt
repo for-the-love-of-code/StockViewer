@@ -1,0 +1,12 @@
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\bin\Debug\netcoreapp3.1\StockViewer.StockApiService.deps.json
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\bin\Debug\netcoreapp3.1\StockViewer.StockApiService.dll
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\bin\Debug\netcoreapp3.1\StockViewer.StockApiService.pdb
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\bin\Debug\netcoreapp3.1\StockViewer.Domain.dll
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\bin\Debug\netcoreapp3.1\StockViewer.Domain.pdb
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.csprojAssemblyReference.cache
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.csproj.CoreCompileInputs.cache
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.AssemblyInfoInputs.cache
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.AssemblyInfo.cs
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.csproj.CopyComplete
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.dll
+C:\GitHub\StockViewer\Core\StockViewer.StockApiService\obj\Debug\netcoreapp3.1\StockViewer.StockApiService.pdb

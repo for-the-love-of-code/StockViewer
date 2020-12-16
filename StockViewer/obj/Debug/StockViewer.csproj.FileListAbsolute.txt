@@ -1,4 +1,3 @@
-C:\GitHub\StockViewer\StockViewer\obj\Debug\StockViewer.csprojAssemblyReference.cache
 C:\GitHub\StockViewer\StockViewer\obj\Debug\Login.g.cs
 C:\GitHub\StockViewer\StockViewer\obj\Debug\MainWindow.g.cs
 C:\GitHub\StockViewer\StockViewer\obj\Debug\App.g.cs
@@ -24,3 +23,10 @@ C:\GitHub\StockViewer\StockViewer\obj\Debug\StockViewer.csproj.CoreCompileInputs
 C:\GitHub\StockViewer\StockViewer\obj\Debug\StockViewer.csproj.CopyComplete
 C:\GitHub\StockViewer\StockViewer\obj\Debug\StockViewer.exe
 C:\GitHub\StockViewer\StockViewer\obj\Debug\StockViewer.pdb
+C:\GitHub\StockViewer\StockViewer\obj\Debug\Register.g.cs
+C:\GitHub\StockViewer\StockViewer\bin\Debug\MaterialDesignColors.dll
+C:\GitHub\StockViewer\StockViewer\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\GitHub\StockViewer\StockViewer\bin\Debug\MaterialDesignColors.pdb
+C:\GitHub\StockViewer\StockViewer\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\GitHub\StockViewer\StockViewer\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\GitHub\StockViewer\StockViewer\obj\Debug\Register.baml
