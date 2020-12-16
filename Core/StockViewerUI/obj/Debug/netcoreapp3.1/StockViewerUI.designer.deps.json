@@ -6,6 +6,18 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "MahApps.Metro.IconPacks.Material/4.8.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/MahApps.Metro.IconPacks.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.6"
+          },
+          "lib/netcoreapp3.1/MahApps.Metro.IconPacks.Material.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.6"
+          }
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.2.3": {
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
@@ -380,6 +392,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "PasswordBoxMVVM/1.0.5": {
+        "runtime": {
+          "lib/netcoreapp3.1/PasswordBoxMVVM.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1271,6 +1291,13 @@
     }
   },
   "libraries": {
+    "MahApps.Metro.IconPacks.Material/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KZ6BRhXtFlcKuuh5n13ezexZSuyVOo7O+tQwacLRvzfl421P+/rWfRO1rcsHimvo2Bpm4cG8uTj7KXagsioJyg==",
+      "path": "mahapps.metro.iconpacks.material/4.8.0",
+      "hashPath": "mahapps.metro.iconpacks.material.4.8.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.Identity.Core/2.2.3": {
       "type": "package",
       "serviceable": true,
@@ -1480,6 +1507,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "PasswordBoxMVVM/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NeUoGEBKjrYotXuLdSmEsglUhofPNgf6Hd6g7R64R+Iail4+ANzkNRsrcq/euYMlurFkC7MUtUJvesdU20Cycg==",
+      "path": "passwordboxmvvm/1.0.5",
+      "hashPath": "passwordboxmvvm.1.0.5.nupkg.sha512"
     },
     "Prism.Core/8.0.0.1909": {
       "type": "package",

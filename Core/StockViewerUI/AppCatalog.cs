@@ -1,19 +1,16 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using StockViewer.Domain.Models;
-using StockViewer.Domain.Services;
 using StockViewer.Domain.Services.Authentication;
 using StockViewer.Domain.Services.Data;
 using StockViewer.EntityFramework;
 using StockViewer.EntityFramework.Services;
 using StockViewer.StockApiService;
 using StockViewerUI.Orchastration;
-using StockViewerUI.State.Navigators;
+using StockViewerUI.State.CurrentContext;
 using StockViewerUI.ViewModels;
 using StockViewerUI.ViewModels.Factories;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace StockViewerUI
 {
@@ -23,6 +20,7 @@ namespace StockViewerUI
         {
             IServiceCollection services = new ServiceCollection();
 
+            // Services
             services.AddSingleton<IDataService<User>, DataService<User>>();
             services.AddSingleton<IDataService<Stock>, DataService<Stock>>();
             services.AddSingleton<IDataService<UserStockMapping>, UserStockMappingDataService>();
@@ -34,18 +32,20 @@ namespace StockViewerUI
             services.AddSingleton<IStockService, StockService>();
             services.AddSingleton<StockViewerDbContextFactory>();
 
-            // Factories - wrappers over ViewModels.
+            // Factories.
             services.AddSingleton<IBaseViewModelFactory, BaseViewModelFactory>();
             services.AddSingleton<IGenericViewModelFactory<WatchListViewModel>, WatchListViewModelFactory>();
             services.AddSingleton<IGenericViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
             services.AddSingleton<IGenericViewModelFactory<RegisterViewModel>, RegisterViewModelFactory>();
 
+            // View models and associated components.
             services.AddScoped<MainViewModel>();
             services.AddScoped<WatchListViewModel>();
             services.AddScoped<MainWindow>();
             services.AddScoped<IUserManager, UserManager>();
-            services.AddScoped<INavigator, Navigator>();
+            services.AddScoped<ICurrentContext, CurrentContext>();
 
+            // Main Window.
             services.AddScoped(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
 
             return services.BuildServiceProvider();

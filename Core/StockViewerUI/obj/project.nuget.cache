@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2xN7jRY6svCYd80wv76Rxsjb/e75iAQyB4lgLiuUrwvelXmm/rfkcgdBjWZrHxkQ1wNCGvJeC+jE5VVT6EDEjg==",
+  "dgSpecHash": "zaz2H71dFoQ0oXwsSTwpfZuQAro4uNGqRLXJgaXPzpk3KpeaksBFky+wmualc0Cxip8fAU4zYfmnTe5k1+h6fw==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\StockViewer\\Core\\StockViewerUI\\StockViewerUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\isrivastava\\.nuget\\packages\\mahapps.metro.iconpacks.material\\4.8.0\\mahapps.metro.iconpacks.material.4.8.0.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -34,6 +35,7 @@
     "C:\\Users\\isrivastava\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\isrivastava\\.nuget\\packages\\passwordboxmvvm\\1.0.5\\passwordboxmvvm.1.0.5.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512",
     "C:\\Users\\isrivastava\\.nuget\\packages\\prism.wpf\\8.0.0.1909\\prism.wpf.8.0.0.1909.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",

@@ -26,5 +26,10 @@ namespace StockViewerUI
 
             DataContext = dataContext;
         }
+
+        private void _window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

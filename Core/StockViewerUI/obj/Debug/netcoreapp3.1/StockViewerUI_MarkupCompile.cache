@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\GitHub\StockViewer\Core\StockViewerUI\App.xaml
-5-1306126079
+61623497410
 
-281506744333
-2201404710547
-Controls\NavigationBar.xaml;MainWindow.xaml;Styles\Common.xaml;Views\LoginView.xaml;Views\WatchListView.xaml;
+32-1175332515
+223-1997304289
+Controls\NavigationBar.xaml;MainWindow.xaml;Styles\Common.xaml;Views\LoginView.xaml;Views\RegisterView.xaml;Views\WatchListView.xaml;
 
 False
 

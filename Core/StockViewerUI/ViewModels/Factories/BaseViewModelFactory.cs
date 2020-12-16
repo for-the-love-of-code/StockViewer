@@ -2,7 +2,7 @@
 using StockViewer.Domain.Services.Authentication;
 using StockViewer.Domain.Services.Data;
 using StockViewerUI.Orchastration;
-using StockViewerUI.State;
+using StockViewerUI.State.CurrentContext;
 using System;
 using System.Collections.Generic;
 using System.Text;

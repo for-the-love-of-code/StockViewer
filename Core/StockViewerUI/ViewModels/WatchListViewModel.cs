@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace StockViewerUI.ViewModels
 {
@@ -19,26 +20,16 @@ namespace StockViewerUI.ViewModels
     {
 		private string symbol;
 		private Stock stock;
-		private readonly IUserManager userManager;
 		private readonly ObservableCollection<Stock> watchList;
-		private readonly IUserStockMappingDataService userStockMappingDataService;
-		private DelegateCommand<Stock> removeSymbolCommand;
 
 		public ICommand SearchSymbolCommand { get; set; }
 		public ICommand RemoveStockCommand { get; set; }
 
-		public DelegateCommand<Stock> RemoveSymbolCommand => removeSymbolCommand ?? (removeSymbolCommand = new DelegateCommand<Stock>(RemoveSymbol, _ => true));
-
 		public WatchListViewModel(IStockService stockService, IUserManager userManager, IUserStockMappingDataService userStockMappingDataService)
 		{
-			this.userManager = userManager;
-			this.userStockMappingDataService = userStockMappingDataService;
-
-			// For testing 
 			watchList = new ObservableCollection<Stock>();
 			SearchSymbolCommand = new SearchSymbolCommand(this, stockService);
-			RemoveStockCommand = new RemoveStockCommand(this, userManager, userStockMappingDataService);
-			
+			RemoveStockCommand = new RemoveStockCommand(this, userManager, userStockMappingDataService);			
 		}
 
 		public string Symbol
@@ -79,18 +70,6 @@ namespace StockViewerUI.ViewModels
 			}
 		}
 
-		private void RemoveSymbol(Stock stock)
-		{
-			try
-			{
-				var currentUser = userManager.CurrentUser;
-				WatchList.Remove(stock);
-				// await userStockMappingDataService.DeleteStockForUserAsync(currentUser.UserId, stock.Id);
-			}
-			catch(Exception ex)
-			{
-				Debug.WriteLine(ex);
-			}
-		}
+		public bool IsPositive { get; set; }
 	}
 }

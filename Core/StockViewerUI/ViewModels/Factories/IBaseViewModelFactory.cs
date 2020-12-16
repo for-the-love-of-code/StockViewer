@@ -1,4 +1,4 @@
-﻿using StockViewerUI.State;
+﻿using StockViewerUI.State.CurrentContext;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:StockViewerUI"
         xmlns:controls="clr-namespace:StockViewerUI.Controls"
         
+        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="800"
+        WindowStyle="None" ResizeMode="NoResize"
+        
+        MouseDown="_window_MouseDown"
         x:Name="_window">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,7 +22,7 @@
 
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
+            <ContentControl Padding="10 10 10 10"  Content="{Binding Navigator.CurrentViewModel}"/>
         </ScrollViewer>
 
     </Grid>

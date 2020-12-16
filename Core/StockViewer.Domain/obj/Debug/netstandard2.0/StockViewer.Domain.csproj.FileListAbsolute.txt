@@ -2,8 +2,8 @@ C:\GitHub\StockViewer\Core\StockViewer.Domain\bin\Debug\netstandard2.0\StockView
 C:\GitHub\StockViewer\Core\StockViewer.Domain\bin\Debug\netstandard2.0\StockViewer.Domain.dll
 C:\GitHub\StockViewer\Core\StockViewer.Domain\bin\Debug\netstandard2.0\StockViewer.Domain.pdb
 C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.csprojAssemblyReference.cache
+C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.csproj.CoreCompileInputs.cache
 C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.AssemblyInfoInputs.cache
 C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.AssemblyInfo.cs
 C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.dll
 C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.pdb
-C:\GitHub\StockViewer\Core\StockViewer.Domain\obj\Debug\netstandard2.0\StockViewer.Domain.csproj.CoreCompileInputs.cache

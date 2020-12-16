@@ -8,5 +8,6 @@ namespace StockViewerUI.ViewModels
 {
     public class ViewModelBase : ObservableObject
     {
+        public delegate TViewModel CreateViewModel<TViewModel>() where TViewModel : ViewModelBase;
     }
 }

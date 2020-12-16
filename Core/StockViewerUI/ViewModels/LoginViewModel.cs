@@ -1,5 +1,8 @@
-﻿using StockViewerUI.Commands;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using StockViewerUI.Commands;
 using StockViewerUI.Orchastration;
+using StockViewerUI.State.CurrentContext;
+using StockViewerUI.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +10,7 @@ using System.Windows.Input;
 
 namespace StockViewerUI.ViewModels
 {
-    public class LoginViewModel : ViewModelBase
+	public class LoginViewModel : ViewModelBase
     {
 		private string userName;
 		public string UserName
@@ -23,11 +26,32 @@ namespace StockViewerUI.ViewModels
 			}
 		}
 
-		public ICommand LoginCommand { get; }
+		private string password;
 
-		public LoginViewModel(IUserManager userManager)
+		public string Password
 		{
-			LoginCommand = new LoginCommand(userManager, this);
+			get
+			{
+				return password;
+			}
+			set
+			{
+				password = value;
+				OnPropertyChanged(nameof(Password));
+			}
+		}
+
+		public ICommand LoginCommand { get; }
+		public ICommand ViewRegisterCommand { get; }
+
+		public LoginViewModel(
+			IUserManager userManager,
+			ICurrentContext navigator,
+			IGenericViewModelFactory<WatchListViewModel> viewModelFactory,
+			IGenericViewModelFactory<RegisterViewModel> registerViewModelFactory)
+		{
+			LoginCommand = new LoginCommand(userManager, this, navigator, viewModelFactory);
+			ViewRegisterCommand = new ViewRegisterCommand(navigator, registerViewModelFactory);
 		}
 	}
 }

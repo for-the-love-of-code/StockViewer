@@ -1,9 +1,9 @@
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\bin\Debug\netcoreapp3.1\StockViewer.Infrastructure.deps.json
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\bin\Debug\netcoreapp3.1\StockViewer.Infrastructure.dll
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\bin\Debug\netcoreapp3.1\StockViewer.Infrastructure.pdb
-C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.csprojAssemblyReference.cache
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.csproj.CoreCompileInputs.cache
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.AssemblyInfoInputs.cache
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.AssemblyInfo.cs
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.dll
 C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.pdb
+C:\GitHub\StockViewer\Core\StockViewer\StockViewer.Infrastructure\obj\Debug\netcoreapp3.1\StockViewer.Infrastructure.csprojAssemblyReference.cache

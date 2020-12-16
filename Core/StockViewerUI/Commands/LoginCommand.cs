@@ -1,7 +1,11 @@
 ﻿using StockViewerUI.Orchastration;
+using StockViewerUI.State;
+using StockViewerUI.State.CurrentContext;
 using StockViewerUI.ViewModels;
+using StockViewerUI.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Input;
 
@@ -11,11 +15,15 @@ namespace StockViewerUI.Commands
     {
         private readonly IUserManager userManager;
         private readonly LoginViewModel loginViewModel;
+        private readonly ICurrentContext navigator;
+        private readonly IGenericViewModelFactory<WatchListViewModel> viewModelFactory;
 
-        public LoginCommand(IUserManager userManager, LoginViewModel loginViewModel)
+        public LoginCommand(IUserManager userManager, LoginViewModel loginViewModel, ICurrentContext navigator, IGenericViewModelFactory<WatchListViewModel> viewModelFactory)
         {
             this.userManager = userManager;
             this.loginViewModel = loginViewModel;
+            this.navigator = navigator;
+            this.viewModelFactory = viewModelFactory;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,7 +35,20 @@ namespace StockViewerUI.Commands
 
         public async void Execute(object parameter)
         {
-            bool success = await userManager.LoginAsync(loginViewModel.UserName, string.Empty);
+            try
+            {
+                bool success = await userManager.LoginAsync(loginViewModel.UserName, loginViewModel.Password);
+                
+                if (success)
+                {
+                    navigator.CurrentViewModel = viewModelFactory.CreateViewModel();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
     }
 }

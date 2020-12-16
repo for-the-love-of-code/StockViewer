@@ -1,5 +1,4 @@
-﻿using StockViewerUI.State;
-using StockViewerUI.State.Navigators;
+﻿using StockViewerUI.State.CurrentContext;
 using StockViewerUI.ViewModels.Factories;
 using System;
 using System.Windows.Input;
@@ -10,10 +9,10 @@ namespace StockViewerUI.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private readonly INavigator _navigator;
+        private readonly ICurrentContext _navigator;
         private readonly IBaseViewModelFactory _viewModelFactory;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator, IBaseViewModelFactory viewModelFactory)
+        public UpdateCurrentViewModelCommand(ICurrentContext navigator, IBaseViewModelFactory viewModelFactory)
         {
             _navigator = navigator;
             _viewModelFactory = viewModelFactory;

@@ -13,11 +13,13 @@
 
         <Grid Grid.Row="0">
             <TextBlock  Padding="10"
-                        Background="{ StaticResource BrushPrimary1 }"
+                        Background="	#FF8B4513"
                         MaxWidth="1000"
                         FontSize="28"
-                        Foreground="White"
-                        Text="STOCK VIEWER" />
+                        Foreground="GhostWhite"
+                        Margin="10"
+                        FontFamily="helvetica"
+                        Text="Stock Viewer" />
         </Grid>
 
         <Grid Grid.Row="1">
