@@ -23,7 +23,7 @@ namespace StockViewerUI.ViewModels
 	public class WatchListViewModel : ViewModelBase, IDisposable
     {
 		private const int DueTime = 5 * 1000;
-		private const int RefreshRate = 10 * 1000;
+		private const int RefreshRate = 1 * 60 * 1000;
 
 		private string symbol;
 		private Stock stock;
@@ -97,7 +97,7 @@ namespace StockViewerUI.ViewModels
 
 				foreach (var stock in WatchList)
 				{
-					// symbolPriceTaskMapping[stock.Symbol] = stockService.GetLivePriceAsync(stock.Symbol);
+					symbolPriceTaskMapping[stock.Symbol] = stockService.GetLivePriceAsync(stock.Symbol);
 				}
 
 				await Task.WhenAll(symbolPriceTaskMapping.Select(x => x.Value));
