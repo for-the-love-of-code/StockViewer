@@ -46,12 +46,11 @@ namespace StockViewerUI.ViewModels
 
 		public LoginViewModel(
 			IUserManager userManager,
-			ICurrentContext navigator,
-			IGenericViewModelFactory<WatchListViewModel> viewModelFactory,
-			IGenericViewModelFactory<RegisterViewModel> registerViewModelFactory)
+			IRenavigator watchListNavigator,
+			IRenavigator registerRenavigator)
 		{
-			LoginCommand = new LoginCommand(userManager, this, navigator, viewModelFactory);
-			ViewRegisterCommand = new ViewRegisterCommand(navigator, registerViewModelFactory);
+			LoginCommand = new LoginCommand(userManager, this, watchListNavigator);
+			ViewRegisterCommand = new RedirectCommand(registerRenavigator);
 		}
 	}
 }

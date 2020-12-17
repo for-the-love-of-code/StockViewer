@@ -1,5 +1,6 @@
 ﻿using StockViewer.Domain.Models;
 using StockViewer.Domain.Services.Data;
+using StockViewerUI.Models;
 using StockViewerUI.Orchastration;
 using StockViewerUI.ViewModels;
 using System;
@@ -34,7 +35,7 @@ namespace StockViewerUI.Commands
         {
             try
             {
-                var stock = (Stock)parameter;
+                var stock = (LiveStockData)parameter;
                 var currentUser = userManager.CurrentUser;
                 watchListViewModel.WatchList.Remove(stock);
                 await userStockMappingDataService.DeleteStockForUserAsync(currentUser.UserId, stock.Id);

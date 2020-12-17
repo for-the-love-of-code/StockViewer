@@ -11,5 +11,7 @@ namespace StockViewer.Domain.Services.Data
         Task<IEnumerable<UserStockMapping>> GetStocksForUserAsync(int userId);
 
         Task DeleteStockForUserAsync(int userId, int stockId);
+
+        Task<UserStockMapping> AddStockForUserAsync(UserStockMapping userStockMapping);
     }
 }

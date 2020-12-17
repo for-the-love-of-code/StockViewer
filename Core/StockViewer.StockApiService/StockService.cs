@@ -11,32 +11,33 @@ namespace StockViewer.StockApiService
 {
     public class StockService : IStockService
     {
-        private const string ApiServer = "https://financialmodelingprep.com/api/v3";
-        private readonly string apiKey = "a4f9f2e874d0e33bb8a437561cc00215";
+        private readonly StockServiceClient client;
 
-        // Hardcoding to NASDAQ for demo.
+        public StockService(StockServiceClient client)
+        {
+            this.client = client;
+        }
+
+        // Hardcoding to nyse for demo.
         private const string ExchangeName = "NASDAQ";
 
         public async Task<IEnumerable<Stock>> TickerSearchAsync(string searchText)
         {
-            using (var client = new HttpClient())
-            {
-                var uri = $"{ApiServer}/search?query={searchText}&limit=10&exchange={ExchangeName}&apikey={apiKey}";
-                HttpResponseMessage response = await client.GetAsync(uri).ConfigureAwait(false);
-                string jsonResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return JsonConvert.DeserializeObject<IEnumerable<Stock>>(jsonResponse);
-            }
+            var uri = $"search?query={searchText}&limit=10&exchange={ExchangeName}&";
+            return await client.GetAsync<IEnumerable<Stock>>(uri).ConfigureAwait(false);
         }
 
-        public async Task<Stock> GetStockQuoteAsync(string symbol)
+        public async Task<Stock> GetStockDataAsync(string symbol)
         {
-            using (var client = new HttpClient())
-            {
-                var uri = $"{ApiServer}/quote/{symbol}?apikey={apiKey}";
-                HttpResponseMessage response = await client.GetAsync(uri).ConfigureAwait(false);
-                string jsonResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return JsonConvert.DeserializeObject<List<Stock>>(jsonResponse).First();
-            }
+                var uri = $"quote/{symbol}?";
+                return (await client.GetAsync<List<Stock>>(uri).ConfigureAwait(false)).First();
+            
+        }
+
+        public async Task<Stock> GetLivePriceAsync(string symbol)
+        {
+            var uri = $"quote-short/{symbol}?";
+            return (await client.GetAsync<List<Stock>>(uri).ConfigureAwait(false)).First();
         }
     }
 }

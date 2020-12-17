@@ -29,7 +29,8 @@ namespace StockViewerUI
 
         private void _window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            if(e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }

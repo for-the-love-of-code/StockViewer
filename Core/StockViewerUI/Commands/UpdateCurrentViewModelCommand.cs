@@ -10,9 +10,9 @@ namespace StockViewerUI.Commands
         public event EventHandler CanExecuteChanged;
 
         private readonly ICurrentContext _navigator;
-        private readonly IBaseViewModelFactory _viewModelFactory;
+        private readonly IViewModelFactory _viewModelFactory;
 
-        public UpdateCurrentViewModelCommand(ICurrentContext navigator, IBaseViewModelFactory viewModelFactory)
+        public UpdateCurrentViewModelCommand(ICurrentContext navigator, IViewModelFactory viewModelFactory)
         {
             _navigator = navigator;
             _viewModelFactory = viewModelFactory;

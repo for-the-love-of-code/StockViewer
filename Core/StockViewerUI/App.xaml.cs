@@ -1,14 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using StockViewer.Domain.Models;
-using StockViewer.EntityFramework.Services;
-using StockViewer.StockApiService;
-using StockViewerUI.ViewModels;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using StockViewer.EntityFramework;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace StockViewerUI
@@ -21,7 +14,15 @@ namespace StockViewerUI
         protected override void OnStartup(StartupEventArgs e)
         {
             IServiceProvider serviceProvider = AppCatalog.ServiceProvider();
+
+            var dbContextFactory = serviceProvider.GetRequiredService<StockViewerDbContextFactory>();
+            using (var dbContext = dbContextFactory.CreateDbContext())
+            {
+                dbContext.Database.Migrate();
+            }
+
             var window = serviceProvider.GetRequiredService<MainWindow>();
+
             window.Show();
             base.OnStartup(e);
         }

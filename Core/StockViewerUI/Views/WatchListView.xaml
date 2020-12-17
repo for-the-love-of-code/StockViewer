@@ -4,10 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StockViewerUI.Views"
+             xmlns:utils="clr-namespace:StockViewerUI.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="_watchListDetails">
 
+    <Control.Resources>
+        <utils:ValueToBrushConverter x:Key="textColorConverter"/>
+    </Control.Resources>
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -16,16 +20,19 @@
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0" HorizontalAlignment="Center">
             <TextBox Width="100" Text="{Binding Symbol, UpdateSourceTrigger=LostFocus}"/>
-            <Button Margin="5 0 0 0" Content="Add to watchlist" Command="{Binding SearchSymbolCommand}"/>
+            <Button Margin="5 0 0 0" Padding="4" BorderBrush="White" Content="Add to watchlist" Command="{Binding SearchSymbolCommand}"/>
         </WrapPanel>
         
-        <DataGrid Grid.Row="1" ItemsSource="{Binding WatchList}" AutoGenerateColumns="false" CanUserAddRows="False">
+        <DataGrid Grid.Row="1" IsReadOnly="true" ItemsSource="{Binding WatchList}" BorderBrush="White" BorderThickness="0" AutoGenerateColumns="false" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
-                <DataGridTextColumn Binding="{Binding Price}" Header="Price" />
-                <DataGridTextColumn Binding="{Binding PreviousClose}" Header="Previous Close" />
-                <DataGridTextColumn Binding="{Binding YearLow}" Header="Year Low" />
-                <DataGridTextColumn Binding="{Binding YearHigh}" Header="YearHigh" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width = "240" />
+                <DataGridTextColumn
+                    Foreground="{Binding IsPositiveChange, Converter={StaticResource textColorConverter}}"
+                    Binding="{Binding Path=Price}" Header="Price" Width="60"/>
+                <DataGridTextColumn Binding="{Binding Path=PercentageChange}" Header="Percent Change" Width="60"/>
+                <DataGridTextColumn Binding="{Binding Path=PreviousClose}" Header="Previous Close" Width="80" />
+                <DataGridTextColumn Binding="{Binding Path=YearLow}" Header="Year Low" Width="60" />
+                <DataGridTextColumn Binding="{Binding Path=YearHigh}" Header="Year High" Width="60" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

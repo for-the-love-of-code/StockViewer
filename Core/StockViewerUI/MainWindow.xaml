@@ -6,12 +6,11 @@
         xmlns:local="clr-namespace:StockViewerUI"
         xmlns:controls="clr-namespace:StockViewerUI.Controls"
         
-        
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800"
         WindowStyle="None" ResizeMode="NoResize"
         
-        MouseDown="_window_MouseDown"
+        MouseDown="_window_MouseDown"        
         x:Name="_window">
     <Grid>
         <Grid.RowDefinitions>

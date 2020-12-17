@@ -70,10 +70,10 @@ namespace StockViewerUI.ViewModels
 
 		public ICommand ViewLoginCommand { get; }
 
-		public RegisterViewModel(IUserManager userManager, IRenavigator renavigator)
+		public RegisterViewModel(IUserManager userManager, IRenavigator loginNavigator)
 		{
-			RegisterCommand = new RegisterCommand(this, userManager, currentContext, viewModelFactory);
-			ViewLoginCommand = new ViewLoginCommand(renavigator);
+			RegisterCommand = new RegisterCommand(this, userManager, loginNavigator);
+			ViewLoginCommand = new RedirectCommand(loginNavigator);
 		}
 	}
 }

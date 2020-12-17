@@ -1,5 +1,6 @@
 ﻿using StockViewer.Domain.Models;
 using StockViewer.Domain.Services.Authentication;
+using StockViewerUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

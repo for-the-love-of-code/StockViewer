@@ -10,6 +10,8 @@ namespace StockViewer.Domain.Services.Authentication
     {
         Task<IEnumerable<Stock>> TickerSearchAsync(string searchText);
 
-        Task<Stock> GetStockQuoteAsync(string symbol);
+        Task<Stock> GetStockDataAsync(string symbol);
+
+        Task<Stock> GetLivePriceAsync(string symbol);
     }
 }

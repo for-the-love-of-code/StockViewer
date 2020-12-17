@@ -15,18 +15,15 @@ namespace StockViewerUI.Commands
     {
         private readonly RegisterViewModel registerViewModel;
         private readonly IUserManager userManager;
-        private readonly ICurrentContext currentContext;
-        private readonly IGenericViewModelFactory<LoginViewModel> loginFactory;
+        private readonly IRenavigator loginNavigator;
 
         public RegisterCommand(RegisterViewModel registerViewModel,
             IUserManager userManager,
-            ICurrentContext currentContext,
-            IGenericViewModelFactory<LoginViewModel> loginFactory)
+            IRenavigator loginNavigator)
         {
             this.registerViewModel = registerViewModel;
             this.userManager = userManager;
-            this.currentContext = currentContext;
-            this.loginFactory = loginFactory;
+            this.loginNavigator = loginNavigator;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -49,7 +46,7 @@ namespace StockViewerUI.Commands
 
                 if (success)
                 {
-                    currentContext.CurrentViewModel = loginFactory.CreateViewModel();
+                    loginNavigator.Renavigate();
                 }
             }
             catch (Exception ex)

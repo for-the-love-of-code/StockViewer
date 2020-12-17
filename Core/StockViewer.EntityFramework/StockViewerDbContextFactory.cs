@@ -8,11 +8,8 @@ namespace StockViewer.EntityFramework
         public StockViewerDbContext CreateDbContext(string[] args = null)
         {
             var optionsBuilder = new DbContextOptionsBuilder<StockViewerDbContext>(); 
-                optionsBuilder.UseSqlServer(
-                    "Data Source=(localdb)\\MSSQLLocalDB;" +
-                    "Initial Catalog=StockViewerDB;Integrated Security=True;" +
-                    "Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-                    "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                optionsBuilder.UseSqlite(
+                    "Data Source=StockViewer.db");
 
             return new StockViewerDbContext(optionsBuilder.Options);
         }

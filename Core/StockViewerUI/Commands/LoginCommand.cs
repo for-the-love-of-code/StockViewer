@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Windows.Input;
+using static StockViewerUI.ViewModels.ViewModelBase;
 
 namespace StockViewerUI.Commands
 {
@@ -15,15 +16,13 @@ namespace StockViewerUI.Commands
     {
         private readonly IUserManager userManager;
         private readonly LoginViewModel loginViewModel;
-        private readonly ICurrentContext navigator;
-        private readonly IGenericViewModelFactory<WatchListViewModel> viewModelFactory;
+        private readonly IRenavigator watchListNavigator;
 
-        public LoginCommand(IUserManager userManager, LoginViewModel loginViewModel, ICurrentContext navigator, IGenericViewModelFactory<WatchListViewModel> viewModelFactory)
+        public LoginCommand(IUserManager userManager, LoginViewModel loginViewModel, IRenavigator watchListNavigator)
         {
             this.userManager = userManager;
             this.loginViewModel = loginViewModel;
-            this.navigator = navigator;
-            this.viewModelFactory = viewModelFactory;
+            this.watchListNavigator = watchListNavigator;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -41,7 +40,7 @@ namespace StockViewerUI.Commands
                 
                 if (success)
                 {
-                    navigator.CurrentViewModel = viewModelFactory.CreateViewModel();
+                    watchListNavigator.Renavigate();
                 }
 
             }

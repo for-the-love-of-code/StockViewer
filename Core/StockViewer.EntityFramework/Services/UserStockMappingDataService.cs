@@ -17,6 +17,17 @@ namespace StockViewer.EntityFramework.Services
         {
         }
 
+        public async Task<UserStockMapping> AddStockForUserAsync(UserStockMapping userStockMapping)
+        {
+            using (var dbContext = dbContextFactory.CreateDbContext())
+            {
+                await dbContext.Set<Stock>().AddAsync(userStockMapping.Stock).ConfigureAwait(false);
+                var entityCreated = await dbContext.Set<UserStockMapping>().AddAsync(userStockMapping);
+                await dbContext.SaveChangesAsync().ConfigureAwait(false);
+                return entityCreated.Entity;
+            }
+        }
+
         public async Task DeleteStockForUserAsync(int userId, int stockId)
         {
             using (var dbContext = dbContextFactory.CreateDbContext())
@@ -26,6 +37,7 @@ namespace StockViewer.EntityFramework.Services
                     .ToListAsync()
                     .ConfigureAwait(false);
                 dbContext.UserStockMappings.RemoveRange(matchingEntity);
+                await dbContext.SaveChangesAsync().ConfigureAwait(false);
             }
         }
 
