@@ -44,6 +44,7 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" Margin="0,10">
@@ -103,6 +104,11 @@
                     Content="Already have an account?"
                     FontSize="14"
                     Foreground="Blue" />
+                <TextBlock  Grid.Row="6" Margin="140 20 0 0"
+                            FontSize="14"
+                            Foreground="Maroon"
+                    Text="{Binding Error}"
+                    Visibility="{Binding HasErrorOccurred, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </Grid>
         </Grid>
     </Border>

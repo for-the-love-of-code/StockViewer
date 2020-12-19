@@ -39,6 +39,7 @@ namespace StockViewerUI
             services.AddSingleton<IDataService<User>, UserDataService>();
             services.AddSingleton<IStockService, StockService>();
             services.AddSingleton<StockViewerDbContextFactory>();
+            services.AddSingleton<IStockDataService, StockDataService>();
 
             // Factories.
             services.AddSingleton<IViewModelFactory, ViewModelFactory>();

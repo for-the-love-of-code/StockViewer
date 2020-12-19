@@ -76,7 +76,8 @@ namespace StockViewerUI.Commands
                                 StockId = stockDetails.Id,
                                 UserId = userManager.CurrentUser.UserId,
                                 Stock = stockDetails,
-                            });
+                            },
+                            stockDetails.Symbol);
                     }
                 }
             }

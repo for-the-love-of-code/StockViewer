@@ -27,7 +27,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width = "240" />
                 <DataGridTextColumn
-                    Foreground="{Binding IsPositiveChange, Converter={StaticResource textColorConverter}}"
+                    Foreground="{Binding DataContext.IsPositive, Converter={StaticResource textColorConverter}}"
                     Binding="{Binding Path=Price}" Header="Price" Width="60"/>
                 <DataGridTextColumn Binding="{Binding Path=PercentageChange}" Header="Percent Change" Width="60"/>
                 <DataGridTextColumn Binding="{Binding Path=PreviousClose}" Header="Previous Close" Width="80" />

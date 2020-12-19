@@ -32,7 +32,7 @@ namespace StockViewerUI.Orchastration
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                return false;
+                throw;
             }
 
         }

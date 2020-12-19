@@ -15,7 +15,7 @@ namespace StockViewer.StockApiService
         public StockServiceClient(HttpClient client)
         {
             this.client = client;
-            this.apiKey = "651bb0f13c04dadd20465b0915cb4937";
+            this.apiKey = "db9f5bd8047fcf410cc00950b07f2d18";
             // this.apiKey = "a4f9f2e874d0e33bb8a437561cc00215";
         }
 

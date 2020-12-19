@@ -52,5 +52,36 @@ namespace StockViewerUI.ViewModels
 			LoginCommand = new LoginCommand(userManager, this, watchListNavigator);
 			ViewRegisterCommand = new RedirectCommand(registerRenavigator);
 		}
+
+		private string error;
+		public string Error
+		{
+			get
+			{
+				return error;
+			}
+			set
+			{
+				error = value;
+				if (!string.IsNullOrEmpty(value))
+					hasErrorOccurred = true;
+				OnPropertyChanged(nameof(Error));
+				OnPropertyChanged(nameof(HasErrorOccurred));
+			}
+		}
+
+		private bool hasErrorOccurred;
+		public bool HasErrorOccurred
+		{
+			get
+			{
+				return hasErrorOccurred;
+			}
+			set
+			{
+				hasErrorOccurred = value;
+				OnPropertyChanged(nameof(HasErrorOccurred));
+			}
+		}
 	}
 }

@@ -46,7 +46,9 @@ namespace StockViewerUI.Commands
             }
             catch(Exception ex)
             {
+                loginViewModel.Error = ex.Message;
                 Debug.WriteLine(ex);
+
             }
         }
     }

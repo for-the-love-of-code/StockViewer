@@ -27,7 +27,6 @@ namespace StockViewer.Domain.Services.Authentication
             var user = await userDataService.GetByUserNameAsync(userName);
             if (user == null)
             {
-                // Define cutom exception.
                 throw new Exception("User does not exist.");
             }
 

@@ -15,8 +15,10 @@ namespace StockViewerUI.Commands
         private readonly IUserManager userManager;
         private readonly IUserStockMappingDataService userStockMappingDataService;
 
-
-        public RemoveStockCommand(WatchListViewModel watchListViewModel, IUserManager userManager, IUserStockMappingDataService userStockMappingDataService)
+        public RemoveStockCommand(
+            WatchListViewModel watchListViewModel,
+            IUserManager userManager,
+            IUserStockMappingDataService userStockMappingDataService)
         {
             this.watchListViewModel = watchListViewModel;
             this.userManager = userManager;
@@ -38,7 +40,7 @@ namespace StockViewerUI.Commands
                 var stock = (LiveStockData)parameter;
                 var currentUser = userManager.CurrentUser;
                 watchListViewModel.WatchList.Remove(stock);
-                await userStockMappingDataService.DeleteStockForUserAsync(currentUser.UserId, stock.Id);
+                await userStockMappingDataService.DeleteStockForUserAsync(currentUser.UserId, stock.Symbol);
             }
             catch (Exception ex)
             {

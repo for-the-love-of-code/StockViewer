@@ -23,7 +23,7 @@ namespace StockViewerUI.ViewModels
 	public class WatchListViewModel : ViewModelBase, IDisposable
     {
 		private const int DueTime = 5 * 1000;
-		private const int RefreshRate = 1 * 60 * 1000;
+		private const int RefreshRate = 1 * 5 * 1000;
 
 		private string symbol;
 		private Stock stock;
@@ -59,7 +59,7 @@ namespace StockViewerUI.ViewModels
 					.Select(
 						x =>
 						{
-							return new LiveStockData
+							var liveStockData = new LiveStockData
 							{
 								Name = x.Stock.Name,
 								PreviousClose = x.Stock.PreviousClose,
@@ -69,7 +69,8 @@ namespace StockViewerUI.ViewModels
 								YearLow = x.Stock.YearLow,
 								IsPositiveChange = x.Stock.PreviousClose <= x.Stock.Price,
 								PercentageChange = Math.Round(((x.Stock.Price - x.Stock.PreviousClose) * 100 / x.Stock.PreviousClose), 2).ToString() + "%",
-						};
+							};							
+							return liveStockData;
 						})
 					.ToList();
 
@@ -97,7 +98,7 @@ namespace StockViewerUI.ViewModels
 
 				foreach (var stock in WatchList)
 				{
-					symbolPriceTaskMapping[stock.Symbol] = stockService.GetLivePriceAsync(stock.Symbol);
+					// symbolPriceTaskMapping[stock.Symbol] = stockService.GetLivePriceAsync(stock.Symbol);
 				}
 
 				await Task.WhenAll(symbolPriceTaskMapping.Select(x => x.Value));
@@ -110,7 +111,8 @@ namespace StockViewerUI.ViewModels
 						{
 							if (symbolPriceTaskMapping.ContainsKey(x.Symbol))
 							{
-								x.Price = symbolPriceTaskMapping[x.Symbol].Result.Price;
+								x.Price = new Random().NextDouble();
+								// x.Price = symbolPriceTaskMapping[x.Symbol].Result.Price;
 								x.IsPositiveChange = x.Price > x.PreviousClose;
 								x.PercentageChange = Math.Round(((x.Price - x.PreviousClose) * 100 / x.PreviousClose), 2).ToString() + "%";
 							}
@@ -169,6 +171,18 @@ namespace StockViewerUI.ViewModels
 			}
 		}
 
-		public bool IsPositive { get; set; }
+		private bool isPositive;
+		public bool IsPositive
+		{
+			get
+			{
+				return isPositive;
+			}
+			set
+			{
+				isPositive = value;
+				OnPropertyChanged(nameof(IsPositive));
+			}
+		}
 	}
 }

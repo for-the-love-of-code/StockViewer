@@ -17,21 +17,31 @@ namespace StockViewer.EntityFramework.Services
         {
         }
 
-        public async Task<UserStockMapping> AddStockForUserAsync(UserStockMapping userStockMapping)
+        public async Task<UserStockMapping> AddStockForUserAsync(UserStockMapping userStockMapping, string symbol)
         {
             using (var dbContext = dbContextFactory.CreateDbContext())
             {
-                await dbContext.Set<Stock>().AddAsync(userStockMapping.Stock).ConfigureAwait(false);
+                var existingEntity = await dbContext.Stocks.Where(x => x.Symbol == symbol).FirstOrDefaultAsync();
+                if (existingEntity == null)
+                {
+                    await dbContext.Set<Stock>().AddAsync(userStockMapping.Stock).ConfigureAwait(false);
+                }
+                else
+                {
+                    userStockMapping.StockId = existingEntity.Id;
+                }
+                
                 var entityCreated = await dbContext.Set<UserStockMapping>().AddAsync(userStockMapping);
                 await dbContext.SaveChangesAsync().ConfigureAwait(false);
                 return entityCreated.Entity;
             }
         }
 
-        public async Task DeleteStockForUserAsync(int userId, int stockId)
+        public async Task DeleteStockForUserAsync(int userId, string symbol)
         {
             using (var dbContext = dbContextFactory.CreateDbContext())
             {
+                var stockId = dbContext.Stocks.Where(x => x.Symbol == symbol).First().Id;
                 var matchingEntity = await dbContext.UserStockMappings
                     .Where(x => x.UserId == userId && x.StockId == stockId)
                     .ToListAsync()
